@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Selamat Datang di Kalkulator Website </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript">
+    function cek() {
+        if (form.bil1.value == "" || form.bil2.value == "" || form.bil3.value == "" ) {
+            alert("Isilah Bilangan!");
+            exit;
+        }
+    }
+    function variabel() {
+        x=eval(form.bil1.value || form.cek1.checked);
+        y=eval(form.bil2.value || form.cek2.checked);
+        z=eval(form.bil3.value || form.cek3.checked);
+    }
+    function jumlah() {
+        cek();
+        variabel();
+        a=x+y+z
+        form.hasil.value = a;
+    }
+    function kurang() {
+        cek();
+        variabel();
+        a=x-y-z
+        form.hasil.value = a;
+    }
+    function kali() {
+        cek();
+        variabel();
+        a=x*y*z
+        form.hasil.value = a;
+    }
+    function bagi() {
+        cek();
+        variabel();
+        a=x/y/z
+        form.hasil.value = a;
+    }
+</script>
+</head>
+<body>
+
+    <div class="kalkulator">
+        <h4 class="judul">KALKULATOR WEBSITE</h4>
+        <form name="form"> 
+            <input type="text" name="bil1" class="bil" placeholder="Bilangan 1" required/>
+            <input type="checkbox" name="cek1" onclick="displayResult"/>
+            <input type="text" name="bil2" class="bil" placeholder="Bilangan 2" required/>
+            <input type="checkbox" name="cek2"/>
+            <input type="text" name="bil3" class="bil" placeholder="Bilangan 3" required/>
+            <input type="checkbox" name="cek3"/>
+            <h4 class="garis">___________________</h4> 
+            <input type="button" name="submit" value=" + " class="tombol" onclick="jumlah()"/>
+            <input type="button" name="submit" value=" - " class="tombol" onclick="kurang()"/> 
+            <input type="button" name="submit" value=" x " class="tombol" onclick="kali()"/> 
+            <input type="button" name="submit" value=" / " class="tombol" onclick="bagi()"/> 
+            <input type="text" name="hasil" value="" class="hasil" placeholder="Hasil" readonly="yes" required="no" disabled="disabled" />
+            <div class="footer">
+                Copyright &copy Made by Delfi Arsita
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
